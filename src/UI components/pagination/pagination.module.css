@@ -1,0 +1,57 @@
+.flexContainer {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.flexContainer > div {
+  padding-top: 10px;
+}
+.paginateCtn {
+  display: flex;
+}
+.roundEffect {
+  color: #dd4124;
+  cursor: pointer;
+  font-size: 16px;
+  text-align: center;
+
+  box-sizing: border-box;
+  border-radius: 50%;
+  width: 40px;
+  padding: 11px 0;
+  margin: 5px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  text-decoration: none;
+}
+
+.roundEffect:hover {
+  text-decoration: none;
+  background: #dd4124;
+  color: #fff;
+}
+.roundEffect:hover a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.roundEffect.active {
+  text-decoration: none;
+  background: #dd4124;
+  color: #fff;
+}
+.roundEffect.active a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.active {
+  background: #dd4124;
+  color: #fff;
+}
+a:link {
+  text-decoration: none;
+  color: #dd4124;
+}

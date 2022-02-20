@@ -1,0 +1,32 @@
+.skelet {
+  background-color: rgb(233, 233, 233);
+  width: 100%;
+  position: relative;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+}
+
+.image {
+  width: 100%;
+}
+
+.line {
+  width: 10%;
+  height: 100%;
+  background-color: rgba(179, 179, 179, 0.363);
+  box-shadow: 0px 4px 35px 9px rgba(179, 179, 179, 0.363);
+  position: absolute;
+  top: 0%;
+  left: -10%;
+  animation: goingLine 1s ease-in-out infinite;
+}
+
+@keyframes goingLine {
+  from {
+    left: -10%;
+  }
+
+  to {
+    left: 110%;
+  }
+}

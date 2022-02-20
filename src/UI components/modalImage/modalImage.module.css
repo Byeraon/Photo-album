@@ -1,0 +1,94 @@
+.modalWrapper {
+  width: 100%;
+  height: 100vh;
+  left: 0;
+  opacity: 1;
+  transition: 400ms all;
+  top: 0;
+  position: fixed;
+  background-color: rgba(255, 255, 255, 0.534);
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: openModal 500ms cubic-bezier(0.075, 0.82, 0.165, 1) forwards;
+}
+
+.closeModal {
+  animation: closeModal 500ms cubic-bezier(0.075, 0.82, 0.165, 1) forwards;
+}
+
+@keyframes openModal {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes closeModal {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+.modalBlock {
+  border-radius: 5px;
+  position: relative;
+  animation: block 0.2s linear 100ms forwards;
+  background-color: white;
+  width: 350px;
+  box-sizing: border-box;
+  position: relative;
+  padding: 40px 40px;
+  height: max-content;
+}
+
+@keyframes block {
+  from {
+    transform: translateY(0);
+    box-shadow: 0px 0px 8px 0px rgba(34, 60, 80, 0);
+  }
+  to {
+    transform: translateY(-10px);
+    box-shadow: 0px 4px 8px 0px rgba(34, 60, 80, 0.2);
+  }
+}
+
+.modalBlock img {
+  width: 100%;
+}
+
+.name {
+  font-weight: bold;
+  margin: 20px 0;
+}
+
+.stats {
+  text-align: left;
+}
+
+.status {
+  margin-top: 5px;
+  color: white;
+  width: 100%;
+  padding: 5px 0;
+}
+
+.crossClose {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1024 1024' role='img'%3E%3Cpath d='M602.51 512l402.745-402.745a64 64 0 00-90.51-90.51L512 421.49 109.255 18.745a64 64 0 00-90.51 90.51L421.49 512 18.745 914.745a64 64 0 0090.51 90.51L512 602.51l402.745 402.745a64 64 0 0090.51-90.51z'/%3E%3C/svg%3E");
+  width: 22px;
+  height: 22px;
+  position: absolute;
+  right: 10px;
+  cursor: pointer;
+  top: 10px;
+  border: none;
+  background-color: transparent;
+}
