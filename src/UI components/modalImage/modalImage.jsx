@@ -3,10 +3,14 @@ import { LazyImage } from "../lazyImage/lazyImage";
 
 import style from "./modalImage.module.css";
 
-export const ModalImage = ({ element, setModal }) => {
+export const ModalImage = ({ element, setModal, deleteImg }) => {
   const [isClosed, setClose] = useState(false);
 
-  const transitionWrapper = () => {
+  const transitionWrapper = (isDelete) => {
+    if (isDelete) {
+      deleteImg(element.id);
+    }
+
     setClose(true);
   };
 
@@ -31,6 +35,14 @@ export const ModalImage = ({ element, setModal }) => {
         <LazyImage image={element.url} name={element.title} id={element.id} />
         <p className={style.title}>{element.title}</p>
         <p className={style.stats}>AlbumId: {element.albumId}</p>
+        <button
+          onClick={() => {
+            transitionWrapper(true);
+          }}
+          className={style.delBtn}
+        >
+          DELETE
+        </button>
       </div>
     </div>
   );

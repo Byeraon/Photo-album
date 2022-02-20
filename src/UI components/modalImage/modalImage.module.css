@@ -92,3 +92,12 @@
   border: none;
   background-color: transparent;
 }
+
+.delBtn {
+  width: 100%;
+  height: 25px;
+  cursor: pointer;
+  color: white;
+  border: none;
+  background-color: red;
+}

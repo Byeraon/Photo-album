@@ -22,6 +22,20 @@ function App() {
     setModal({ opened: true, element: element });
   };
 
+  const deleteImg = async (id) => {
+    await fetch(`https://jsonplaceholder.typicode.com/photos/${id}`, {
+      method: "DELETE",
+    });
+    const data = await fetch(api).then((res) => {
+      if (res.ok) {
+        return res.json();
+      } else {
+        return res;
+      }
+    });
+    updateFetchedData(data);
+  };
+
   const filterAll = () => {
     filtered.length === 0
       ? setFilter(albums.map((el) => el.id))
@@ -64,7 +78,11 @@ function App() {
   return (
     <div className="App">
       {modal.opened && (
-        <ModalImage element={modal.element} setModal={setModal} />
+        <ModalImage
+          element={modal.element}
+          setModal={setModal}
+          deleteImg={deleteImg}
+        />
       )}
       <SortingPlace
         filterAll={filterAll}
